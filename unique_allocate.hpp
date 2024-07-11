@@ -31,7 +31,7 @@ class unique_allocate{
 			swap(r);
 			return *this;
 		}
-	pointer get()const noexcept{
+	[[nodiscard]]pointer get()const noexcept{
 		return p;
 	}
 	constexpr Del& get_deleter()noexcept{
@@ -114,7 +114,7 @@ class unique_allocate<T[], Deleter>{
 			get_deleter();
 		}
 	}
-	pointer get()const noexcept{
+	[[nodiscard]]pointer get()const noexcept{
 		return p;
 	}
 	constexpr T& operator[](std::size_t index)noexcept{
